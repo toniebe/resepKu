@@ -11,6 +11,8 @@ import CategoryDetailScreen from '../screen/CategoryDetailScreen'
 import SearchScreen from '../screen/SearchScreen'
 import RecomendationScreen from '../screen/RecomendationScreen'
 import ErrorScreen from '../screen/ErrorScreen'
+import RegisterScreen from '../screen/RegisterScreen';
+import LoginScreen from '../screen/LoginScreen';
 
 import iconExit from '../assets/image/icon-exit.png'
 import iconHome from '../assets/image/home.png'
@@ -18,7 +20,6 @@ import iconCategory from '../assets/image/icon-category.png'
 
 
 import {WARNA_PRIMER} from '../utils/constant'
-import LoginScreen from '../screen/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,6 +78,7 @@ const Router = () => {
         <Stack.Navigator initialRouteName="Splash">
             <Stack.Screen name="Splash" component={SplahScreen} options={{ headerShown: false }}/>
             <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+            <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
             <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }}/>
             <Stack.Screen name="Detail" component={DetailScreen} options={{ headerShown: false }}/>
             <Stack.Screen name="CategoryDetail" component={CategoryDetailScreen} options={{ headerShown: false }} />

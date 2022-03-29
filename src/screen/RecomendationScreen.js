@@ -4,6 +4,8 @@ import Icon from "react-native-vector-icons/Ionicons";
 import CardReceipes from '../components/CardReceipes';
 import arrow from '../assets/image/arrowBlack.png'
 import axios from 'axios'
+import {BASE_URL} from '@env'
+
 
 const RecomendationScreen = ({navigation}) => {
     const [data,setData] = useState([])
@@ -12,7 +14,7 @@ const RecomendationScreen = ({navigation}) => {
     const numColumns = 2
 
     const getData = () => {
-        axios.get('https://masak-apa.tomorisakura.vercel.app/api/recipes')
+        axios.get(`${BASE_URL}/recipes`)
         .then(function (response){
             setData(response.data.results)
             setIsLoading(false)

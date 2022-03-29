@@ -10,6 +10,7 @@ import WARNA_PRIMER from '../utils/constant'
 import ReadMore from '@fawazahmed/react-native-read-more';
 import Bahan from '../components/Bahan';
 import LangkahMasak from '../components/LangkahMasak';
+import {BASE_URL} from '@env'
 
 const {width,height} = Dimensions.get('window');
 const DetailScreen = ({route,navigation}) => {
@@ -24,7 +25,7 @@ const DetailScreen = ({route,navigation}) => {
     const [langkah,setLangkah] = useState([])
     
     const getData = () => {
-        axios.get(`https://masak-apa.tomorisakura.vercel.app/api/recipe/`+key)
+        axios.get(`${BASE_URL}/recipe/${key}`)
         .then(function (response){
             setData(response.data.results)
             setAuthor(response.data.results.author)
@@ -36,7 +37,7 @@ const DetailScreen = ({route,navigation}) => {
     }
 
     const getRekomendasi = () => {
-        axios.get('https://masak-apa.tomorisakura.vercel.app/api/recipes-length/?limit=5')
+        axios.get(`${BASE_URL}/recipes-length/?limit=5`)
         .then(function (response){
             setRekomendasi(response.data.results)
             console.log(rekomendasi)
@@ -189,6 +190,12 @@ const DetailScreen = ({route,navigation}) => {
 export default DetailScreen
 
 const styles = StyleSheet.create({
+    indicatorContainer:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
+
+    },
     container:{
         // borderWidth: 1,
        marginTop: 25,

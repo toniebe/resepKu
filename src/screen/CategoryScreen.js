@@ -14,42 +14,11 @@ import MasakanTradisional from '../assets/image/MasakanTradisional.png'
 import MasakanHariRaya  from '../assets/image/MasakanHariRaya.png'
 import ResepSeafood from '../assets/image/ResepSeafood.png'
 import Sarapan from '../assets/image/Sarapan.png'
-import axios from 'axios';
-import { FlatList } from 'react-native-gesture-handler';
+
 
 const CategoryScreen = ({navigation}) => {
     const [search,setSearch] = useState('')
 
-    // const[data, setData] = useState([]);
-    
-    
-    // const getData = () => {
-    //     axios.get('https://masak-apa.tomorisakura.vercel.app/api/categorys/recipes')
-    //     .then(function(response){
-    //         setData(response.data.results)
-    //         // console.log(response.data.results)
-    //     })
-    // }
-
-    // const dataList = [
-    //     '../assets/image/MasakanHariRaya.png',
-    //     '../assets/image/MasakanTradisional.png',
-    //     '../assets/image/MenuMakanMalam.png',
-    //     '../assets/image/MenuMakanSiang.png',
-    //     '../assets/image/ResepAyam.png',
-    //     '../assets/image/ResepDaging.png',
-    //     '../assets/image/ResepSayuran.png',
-    //     '../assets/image/ResepSeafood.png',
-    //     '../assets/image/Sarapan.png'
-
-    
-    // ]
-
-    // console.log(dataList)
-
-    // useEffect(() =>{
-    //     getData()
-    // },[])
 
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={{backgroundColor: 'white',}}>
@@ -64,16 +33,6 @@ const CategoryScreen = ({navigation}) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.containerCategory} >
-                {/* <FlatList 
-                        data={data}
-                        extraData={dataList}
-                        contentContainerStyle={styles.list}
-                        renderItem={({item,index}) => 
-                        <TouchableOpacity >
-                            <AllCategory image={require(dataList)} name={item.category}/>
-                        </TouchableOpacity> 
-                    }
-                /> */}
 
                 <View style={styles.category}>
                     <TouchableOpacity onPress={()=>navigation.navigate('CategoryDetail',{key:'resep-ayam',title:'Resep Ayam'})}>

@@ -4,6 +4,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import CardReceipes from '../components/CardReceipes';
 import arrow from '../assets/image/arrowBlack.png'
 import axios from 'axios'
+import {BASE_URL} from '@env'
 
 const numColumns = 2
 const CategoryDetailScreen = ({route,navigation}) => {
@@ -15,7 +16,7 @@ const CategoryDetailScreen = ({route,navigation}) => {
 
 
     const getData = () => {
-        axios.get(`https://masak-apa.tomorisakura.vercel.app/api/categorys/recipes/`+key)
+        axios.get(`${BASE_URL}/categorys/recipes/${key}`)
         .then(function (response){
             setData(response.data.results)
             setIsLoading(false)

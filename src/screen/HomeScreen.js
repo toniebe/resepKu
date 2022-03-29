@@ -18,6 +18,7 @@ import arrow from '../assets/image/panah.png'
 import CardReceipes from '../components/CardReceipes';
 import axios from 'axios'
 import WARNA_PRIMER from '../utils/constant'
+import {BASE_URL} from '@env'
 
 const {width,height} = Dimensions.get('window');
 const HomeScreen = ({navigation}) => {
@@ -26,7 +27,7 @@ const HomeScreen = ({navigation}) => {
     const [search,setSearch] = useState('')
     
     const getData = () => {
-        axios.get('https://masak-apa.tomorisakura.vercel.app/api/recipes-length/?limit=5')
+        axios.get(`${BASE_URL}/recipes-length/?limit=5`)
         .then(function (response){
             setData(response.data.results)
             setIsLoading(false)

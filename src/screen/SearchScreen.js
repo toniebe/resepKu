@@ -5,6 +5,7 @@ import CardReceipes from '../components/CardReceipes';
 import arrow from '../assets/image/arrowBlack.png'
 import empty from '../assets/image/empty.png'
 import axios from 'axios'
+import {BASE_URL} from '@env'
 
 const SearchScreen = ({route,navigation}) => {
     const numColumns = 2
@@ -14,16 +15,16 @@ const SearchScreen = ({route,navigation}) => {
     const [find,setFind] = useState(false)
 
     const getData =  () => {
-        axios.get(`https://masak-apa.tomorisakura.vercel.app/api/search/?q=`+key)
+        axios.get(`${BASE_URL}/search/?q=${key}`)
         .then(function (response){
             setData(response.data.results)
             // if(data.length != 0){
             //     setFind(true)
             // }
             setIsLoading(false)
-            console.log(response.data.results)
+            // console.log(response.data.results)
         }).catch(function (error) {
-            console.log(error);
+            // console.log(error);
             navigation.navigate('Error',{key:key})
           });
     }

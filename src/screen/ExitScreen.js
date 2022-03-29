@@ -9,7 +9,6 @@ import { Alert,
     StatusBar,
     TouchableOpacity
 } from 'react-native'
-import { color } from 'react-native-reanimated';
 
 const ExitScreen = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
