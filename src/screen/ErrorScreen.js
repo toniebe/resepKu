@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View,TouchableOpacity,Image } from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity,Image,StatusBar } from 'react-native'
 import arrow from '../assets/image/arrowBlack.png'
 import empty from '../assets/image/empty.png'
 
@@ -7,6 +7,7 @@ const ErrorScreen = ({route,navigation}) => {
     const {key} = route.params
     return (
         <View style={{backgroundColor:'white',flex:1}}>
+           
             <View style={styles.headerContainer}>
                     <TouchableOpacity style={styles.imageContainer} onPress={() => navigation.replace('Dashboard')}>
                         <Image source={arrow} style={styles.imageHeader} />
@@ -14,7 +15,7 @@ const ErrorScreen = ({route,navigation}) => {
                     <Text style={styles.header}>{key}</Text>
             </View>
             <View style={styles.emptyContainer}>
-                {/* <Image source={empty} style={styles.imageEmpty} /> */}
+                <Image source={empty} style={styles.imageEmpty} />
                 <Text>Server Error</Text>
             </View>
         </View>
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 5,
         borderBottomColor: '#E5E5E5',
         flexDirection:'row',
-        marginTop:20
+        marginTop:40
     },
 
     header:{

@@ -36,7 +36,7 @@ const SearchScreen = ({route,navigation}) => {
 
         return (
                     <>
-                    <StatusBar barStyle='dark-content'  translucent backgroundColor="rgba(0,0,0,0)" />
+                    <StatusBar barStyle='dark-content'  translucent={false} backgroundColor="rgba(0,0,0,0)" />
                     {
                         isLoading == true ? (
                         <View style={styles.indicatorContainer}>

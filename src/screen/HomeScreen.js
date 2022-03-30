@@ -147,13 +147,14 @@ const styles = StyleSheet.create({
     inputContainer:{
         marginHorizontal:18,
         marginTop:-25,
+        
         // elevation:2,
     },
     input:{
         borderWidth:1,
         borderColor:'#EEEEEE',
         borderRadius:10,
-      
+        paddingVertical:10,
         paddingLeft:20,
         fontSize:18,
         backgroundColor:'white'

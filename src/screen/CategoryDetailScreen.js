@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
         borderRadius:10,
         paddingLeft:20,
         fontSize:14,
-        backgroundColor:'white'
-
+        backgroundColor:'white',
+        paddingVertical:10
 
     },
     icon:{
